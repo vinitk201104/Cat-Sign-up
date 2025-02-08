@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <style>
+        body { 
+            text-align: center; 
+            background: #f9e79f; 
+            font-family: Roboto, Arial, sans-serif; 
+            overflow: hidden; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh;
+        }
+        .container { 
+            margin: 50px auto; 
+            width: 50%; 
+            padding: 20px; 
+            background: white; 
+            border-radius: 10px; 
+        }
+        .cat { 
+            position: fixed; 
+            bottom: -100px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            width: 100px; 
+            transition: bottom 0.5s ease-in-out; 
+        }
+        .submit{
+            width: 100%;
+            margin-top: 10px;
+            padding: 5px;
+            border: none;
+            border-radius: 2px;
+            background-color: rgb(153, 153, 153);
+        }
+        .text-box{
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Sign Up 😹</p>
+        <form id="signupForm">
+            <input class="text-box" type="text" id="catName" placeholder="Your Cat Name" required>
+            <button class="submit" type="submit">Join</button>
+        </form>
+    </div>
+    <img src="./cat.jpg" class="cat" id="catImage">
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert(document.getElementById("catName").value + " joined! 😺");
+            document.getElementById("catName").value = "";
+            let cat = document.getElementById("catImage");
+            cat.style.bottom = "20px";
+            setTimeout(() => cat.style.bottom = "-100px", 2000);
+        });
+    </script>
+</body>
+</html>
